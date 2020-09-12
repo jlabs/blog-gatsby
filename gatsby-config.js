@@ -7,6 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: `Pandas Eating Lots`,
+    description: 'jLabs site for stuff'
   },
   plugins: [
     {
