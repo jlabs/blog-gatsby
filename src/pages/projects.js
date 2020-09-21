@@ -4,19 +4,15 @@ import { Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
 
-export default function Home({ data }) {
+export default function Projects({ data }) {
   return (
     <Layout>
       <div>
-        <h1
-          css={css`
-            display: inline-block;
-            border-bottom: 1px solid;
-          `}
-        >
+        <h1 css={css`display: inline-block;border-bottom: 1px solid;`}>
           Nope
         </h1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+
+        <h4>{data.allMarkdownRemark.totalCount} Projects</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <Link
@@ -51,7 +47,7 @@ export default function Home({ data }) {
 
 export const query = graphql`
 query {
-  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {posttype: {eq: "blog-post"}}}) {
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {posttype: {eq: "project"}}}) {
     totalCount
     edges {
       node {
