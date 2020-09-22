@@ -4,6 +4,8 @@ import { Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
 
+
+
 export default function Home({ data }) {
   return (
     <Layout>
@@ -45,6 +47,8 @@ export default function Home({ data }) {
           </div>
         ))}
       </div>
+
+      
     </Layout>
   )
 }

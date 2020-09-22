@@ -4,6 +4,8 @@ import { useStaticQuery, Link, graphql } from "gatsby"
 
 import { rhythm } from "../utils/typography"
 
+// ig feed = https://www.instagram.com/geek_father/?__a=1
+
 export default function Layout({ children }) {
   const data = useStaticQuery(
     graphql`
@@ -23,9 +25,8 @@ export default function Layout({ children }) {
         max-width: 700px;
         padding: ${rhythm(2)};
         padding-top: ${rhythm(1.5)};
-      `}
-    >
-	<Link to={`/`}>
+      `}>
+	    <Link to={`/`}>
         <h3 css={css`
             margin-bottom: ${rhythm(2)};
             display: inline-block;

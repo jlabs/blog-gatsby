@@ -40,6 +40,16 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`, 
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-postcss',
+        options: {
+            postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
+        },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: { tailwind: true }
+    }
   ],
 }
