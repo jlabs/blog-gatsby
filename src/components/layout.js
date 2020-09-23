@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
+import Nav from '../components/nav'
 
 // ig feed = https://www.instagram.com/geek_father/?__a=1
 
@@ -22,20 +23,10 @@ export default function Layout({ children }) {
 		</div>
 		<div className="bg-purple-700 p-6 flex flex-col">
 			<div className='flex-grow'>
-				<Link to={`/`} className='block hover:text-white text-3xl' activeClassName='text-gray-500'>
-					{data.site.siteMetadata.title}
-				</Link>
-				<Link to={`/til/`} className='block hover:text-white my-2' activeClassName='text-gray-500'>
-					TIL
-				</Link>
-				<Link to={`/projects/`} className='block hover:text-white my-2' activeClassName='text-gray-500'>
-					Projects
-				</Link>
-				<Link to={`/about/`} className='block hover:text-white my-2' activeClassName='text-gray-500'>
-					Hey! You!
-				</Link>
+				<Nav title={data.site.siteMetadata.title}/>
+				
 			</div>
-			<div className=''>
+			<div>
 				<Link to={'/got-made/'}>
 					Made with ...
 				</Link>

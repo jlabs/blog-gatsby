@@ -1,31 +1,21 @@
 import React from "react"
-import { css } from "@emotion/core"
 import { Link } from "gatsby"
 
-import { rhythm } from "../utils/typography"
-
-export default function Nav() {
+export default function Nav({ props }) {
 return (
-    <nav>
-        <Link to={`/`}>
-            <h3 css={css`
-                margin-bottom: ${rhythm(2)};
-                display: inline-block;
-                font-style: normal;
-            `}>
-          {data.site.siteMetadata.title}
-        </h3>
+    <div>
+        <Link to={`/`} className='block hover:text-white text-3xl' activeClassName='text-gray-500'>
+            {props.title}
         </Link>
-        <Link to={`/til/`} css={css`
-            float: right;
-            `}>
+        <Link to={`/til/`} className='block hover:text-white my-2' activeClassName='text-gray-500'>
             TIL
         </Link>
-        <Link to={`/about/`} css={css`
-            float: right;
-        `}>
-        Hey! You!
+        <Link to={`/projects/`} className='block hover:text-white my-2' activeClassName='text-gray-500'>
+            Projects
         </Link>
-    </nav>
+        <Link to={`/about/`} className='block hover:text-white my-2' activeClassName='text-gray-500'>
+            Hey! You!
+        </Link>
+    </div>
   )
 }
