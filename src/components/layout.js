@@ -23,7 +23,7 @@ export default function Layout({ children }) {
 		</div>
 		<div className="bg-purple-700 p-6 flex flex-col">
 			<div className='flex-grow'>
-				<Nav title={data.site.siteMetadata.title}/>
+				<Nav/>
 				
 			</div>
 			<div>
