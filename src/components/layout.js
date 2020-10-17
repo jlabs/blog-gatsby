@@ -1,21 +1,10 @@
 import React from "react"
-import { useStaticQuery, Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import Nav from '../components/nav'
 
 // ig feed = https://www.instagram.com/geek_father/?__a=1
 
 export default function Layout({ children }) {
-	const data = useStaticQuery(
-		graphql`
-			query {
-				site {
-					siteMetadata {
-						title
-					}
-				}
-			}
-		`
-	)
 	return (
 	<div className='grid grid-cols-3 h-screen'>
 		<div className='p-2 col-span-2'>
@@ -27,7 +16,7 @@ export default function Layout({ children }) {
 				
 			</div>
 			<div>
-				<Link to={'/got-made/'}>
+				<Link to={'/got-made/'} className='text-gray-300'>
 					Made with ...
 				</Link>
 			</div>

@@ -2,15 +2,13 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
-
-
 export default function Home({ data }) {
 	return (
 		<Layout>
 			<div className='flex flex-wrap'>
 				{data.allMarkdownRemark.edges.map(({ node }) => (
-					<Link to={node.fields.slug} className='lg:w-1/2 xl:w-1/3 mr-1'>
-						<div key={node.id} className='rounded overflow-hidden shadow-lg mb-2'>
+					<Link key={node.id} to={node.fields.slug} className='lg:w-1/2 xl:w-1/3 mr-1'>
+						<div className='rounded overflow-hidden shadow-lg mb-2'>
 							<div className='px-6 py-4'>
 								<div className='font-bold text-xl mb-2'>
 										{node.frontmatter.title}
@@ -43,7 +41,8 @@ query {
         }
         excerpt
       }
-    }
+	}
+	distinct(field: frontmatter___tags)
   }
 }
 
